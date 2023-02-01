@@ -1,0 +1,5 @@
+terraform.tfvars
+terraform.tfstate*
+terraform.log
+*.terraform*
+key.pem
