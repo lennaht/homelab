@@ -1,0 +1,8 @@
+pm_api_url          = "https://<proxmox-host>:8006/api2/json"
+pm_api_token_id     = "<username>@<pve-node>!<token-name>"
+pm_api_token_secret = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+vm_base_id          = 801
+ciuser              = "lennart"
+cipassword          = "very-secure"
+cigateway           = "192.168.178.1"
+ci_ipadresses       = ["192.168.178.103/24", "192.168.178.104/24", "192.168.178.105/24"]
