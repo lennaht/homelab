@@ -1,2 +1,9 @@
 ---
 - name: Install qemu-guest-agent
+  package:
+    name: qemu-guest-agent
+    state: present
+- name: Start qemu-guest-agent service
+  systemd:
+    name: qemu-guest-agent
+    state: started

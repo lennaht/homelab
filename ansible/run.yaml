@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - default
+- hosts: master
+  become: true
+  roles:
+    - k3s/master
+- hosts: worker
+  become: true
+  roles:
+    - k3s/worker
+- hosts: all
+  become: true
+  roles:
+    - proxmox-guest

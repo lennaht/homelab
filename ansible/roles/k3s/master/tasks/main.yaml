@@ -1,0 +1,46 @@
+- name: Ensure k3s directory exists
+  ansible.builtin.file:
+    path: '{{ k3s_path }}'
+    state: directory
+- name: Copy k3s config file to host
+  ansible.builtin.template:
+    src: 'k3s_config.yaml.j2'
+    dest: '{{ k3s_path }}/config.yaml'
+- name: Install and run k3s using official script
+  ansible.builtin.command: 'curl -sfL https://get.k3s.io | sh -s - server --cluster-init'
+  run_once: true
+- name: Copy k8s token to controller
+  ansible.builtin.fetch:
+    src: '/var/lib/rancher/k3s/server/token'
+    dest: '{{ playbook_dir }}/'
+    flat: true
+  run_once: true
+- name: Copy k3s.yaml to tmp
+  ansible.builtin.copy:
+    src: '{{ k3s_path }}/k3s.yaml'
+    dest: '/tmp/k3s.yaml'
+    remote_src: true
+  run_once:
+- name: Replace with correct IP
+  ansible.builtin.replace:
+    path: /tmp/k3s.yaml
+    regexp: '127\.0\.0\.1'
+    replace: '{{ hostvars[groups["master"][0]]["ansible_default_ipv4"]["address"] }}'
+  run_once:
+- name: Copy k3s.yaml to controller
+  ansible.builtin.fetch:
+    src: '/tmp/k3s.yaml'
+    dest: '{{ playbook_dir }}/'
+    flat: true
+  run_once: true
+- name: Join cluster
+  vars:
+    token: '{{ lookup("file", "token") }}'
+    clusterIP: '{{ hostvars[groups["master"][0]]["ansible_default_ipv4"]["address"] }}'
+  when: 'inventory_hostname != groups["master"][0]'
+  block:
+    - name: Install k3s and connect to new cluster
+      environment:
+        K3S_TOKEN: '{{ token }}'
+        K3S_URL: 'https://{{ clusterIP }}:6443'
+      ansible.builtin.command: 'curl -sfL https://get.k3s.io | sh -s - -server'

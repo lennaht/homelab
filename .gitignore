@@ -3,3 +3,5 @@ terraform.tfstate*
 terraform.log
 *.terraform*
 key.pem
+token
+ansible/k3s.yaml
