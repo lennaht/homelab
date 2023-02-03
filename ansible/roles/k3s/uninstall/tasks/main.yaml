@@ -5,7 +5,7 @@
   register: master_script
 - name: Run master uninstall script
   ansible.builtin.command: 'sh /usr/local/bin/k3s-uninstall.sh'
-  when: 'master_script.exists'
+  when: 'master_script'
 
 - name: Check if agent uninstall script exists
   ansible.builtin.stat:
@@ -13,4 +13,4 @@
   register: agent_script
 - name: Run agent uninstall script
   ansible.builtin.command: 'sh /usr/local/bin/k3s-agent-uninstall.sh'
-  when: 'agent_script.exists'
+  when: 'agent_script'

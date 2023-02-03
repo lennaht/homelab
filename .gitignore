@@ -5,3 +5,6 @@ terraform.log
 key.pem
 token
 ansible/k3s.yaml
+*.agekey
+deploy-key*
+.decrypted*

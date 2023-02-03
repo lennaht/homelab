@@ -17,19 +17,18 @@
   ansible.builtin.package:
     name: "{{ extra_packages }}"
     state: present
-- name: Uninstall snap
-  block:
-    - name: Remove snap packages
-      ansible.builtin.command: "snap remove --purge {{ item }} && touch ~/.snapdeleted"
-      loop:
-        - lxd
-        - core20
-        - snapd
-      args:
-        creates: '~/.snapdeleted'
-
-    - name: Uninstall snapd
-      ansible.builtin.apt:
-        name: snapd
-        state: absent
-        autoremove: true
+#- name: Uninstall snap
+#  block:
+#    - name: Remove snap packages
+#      ansible.builtin.command: "snap remove --purge {{ item }} && touch ~/.snapdeleted"
+#      loop:
+#        - lxd
+#        - core20
+#        - snapd
+#      args:
+#        creates: '~/.snapdeleted'
+#    - name: Uninstall snapd
+#      ansible.builtin.apt:
+#        name: snapd
+#        state: absent
+#        autoremove: true

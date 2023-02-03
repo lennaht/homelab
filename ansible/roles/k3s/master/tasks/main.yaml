@@ -7,7 +7,7 @@
     src: 'k3s_config.yaml.j2'
     dest: '{{ k3s_path }}/config.yaml'
 - name: Install and run k3s using official script
-  ansible.builtin.command: 'curl -sfL https://get.k3s.io | sh -s - server --cluster-init'
+  ansible.builtin.shell: 'curl -sfL https://get.k3s.io | sh -s - server --cluster-init'
   run_once: true
 - name: Copy k8s token to controller
   ansible.builtin.fetch:
@@ -20,13 +20,13 @@
     src: '{{ k3s_path }}/k3s.yaml'
     dest: '/tmp/k3s.yaml'
     remote_src: true
-  run_once:
+  run_once: true
 - name: Replace with correct IP
   ansible.builtin.replace:
     path: /tmp/k3s.yaml
     regexp: '127\.0\.0\.1'
     replace: '{{ hostvars[groups["master"][0]]["ansible_default_ipv4"]["address"] }}'
-  run_once:
+  run_once: true
 - name: Copy k3s.yaml to controller
   ansible.builtin.fetch:
     src: '/tmp/k3s.yaml'
@@ -43,4 +43,4 @@
       environment:
         K3S_TOKEN: '{{ token }}'
         K3S_URL: 'https://{{ clusterIP }}:6443'
-      ansible.builtin.command: 'curl -sfL https://get.k3s.io | sh -s - -server'
+      ansible.builtin.shell: 'curl -sfL https://get.k3s.io | sh -s - -server'
