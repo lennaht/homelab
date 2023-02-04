@@ -7,7 +7,7 @@
     src: 'k3s_config.yaml.j2'
     dest: '{{ k3s_path }}/config.yaml'
 - name: Install and run k3s using official script
-  ansible.builtin.shell: 'curl -sfL https://get.k3s.io | sh -s - server --cluster-init'
+  ansible.builtin.shell: 'curl -sfL https://get.k3s.io | sh -s - server --cluster-init --disable traefik --disable servicelb'
   run_once: true
 - name: Copy k8s token to controller
   ansible.builtin.fetch:
@@ -43,4 +43,4 @@
       environment:
         K3S_TOKEN: '{{ token }}'
         K3S_URL: 'https://{{ clusterIP }}:6443'
-      ansible.builtin.shell: 'curl -sfL https://get.k3s.io | sh -s - -server'
+      ansible.builtin.shell: 'curl -sfL https://get.k3s.io | sh -s - -server --disable traefik --disable servicelb'

@@ -15,4 +15,4 @@
       environment:
         K3S_TOKEN: '{{ token }}'
         K3S_URL: 'https://{{ clusterIP }}:6443'
-      shell: 'curl -sfL https://get.k3s.io | sh -s - server'
+      shell: 'curl -sfL https://get.k3s.io | sh -s - server --disable traefik --disable servicelb'
