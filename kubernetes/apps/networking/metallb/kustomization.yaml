@@ -4,7 +4,7 @@ metadata:
   name: networking-metallb
   namespace: flux-system
 spec:
-  path: ./kubernetes/networking/metallb/base
+  path: ./kubernetes/apps/networking/metallb/base
   sourceRef:
     kind: GitRepository
     name: flux-system
@@ -19,7 +19,7 @@ metadata:
   name: networking-metallb-configs
   namespace: flux-system
 spec:
-  path: ./kubernetes/networking/metallb/config
+  path: ./kubernetes/apps/networking/metallb/config
   sourceRef:
     kind: GitRepository
     name: flux-system
