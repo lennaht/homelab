@@ -9,9 +9,19 @@ spec:
     spec:
       chart: metallb
       version: 0.13.7
+      interval: 15m
       sourceRef:
         kind: HelmRepository
         name: metallb-repo
         namespace: flux-system
+  install:
+    createNamespace: true
+    remediation:
+      retries: 5
+  upgrade:
+    remediation:
+      retries: 5
   values:
     replicaCount: 1
+    crds:
+      enabled: true
