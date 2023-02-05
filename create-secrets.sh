@@ -3,9 +3,10 @@ cd kubernetes/bootstrap
 # Create age-key secret in cluster and save sops-encrypted file
 if [ ! -f "age-key.sops.yaml" ]
 then
+    cat ../../age.agekey |
     kubectl create secret generic sops-age \
         -n flux-system \
-        --from-file=age.agekey=../../age.agekey \
+        --from-file=age.agekey=/dev/stdin \
         -o yaml \
         | sops -e \
         --input-type yaml \
