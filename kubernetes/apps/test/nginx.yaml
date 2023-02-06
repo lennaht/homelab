@@ -36,11 +36,13 @@ kind: Ingress
 metadata:
   name: nginx-ingress
   namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
 spec:
   tls:
   - hosts:
     - '*.lennartbeneke.de'
-    secretName: lan-lennartbeneke-de-tls-staging
+    secretName: lan-lennartbeneke-de-tls-production
   rules:
   - host: nginx.lennartbeneke.de
     http:
