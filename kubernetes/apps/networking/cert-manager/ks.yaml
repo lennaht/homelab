@@ -1,18 +1,19 @@
----
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: networking-cert-manager
+  name: cert-manager-crds
   namespace: flux-system
 spec:
-  path: ./kubernetes/apps/networking/cert-manager/base
-  prune: true
+  interval: 15m
+  prune: false
   sourceRef:
     kind: GitRepository
-    name: flux-system
-  interval: 30m
-  retryInterval: 1m
-  timeout: 3m
+    name: cert-manager-crds-repo
+    namespace: flux-system
+  healthChecks:
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: clusterissuers.cert-manager.io
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
@@ -21,7 +22,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: networking-cert-manager
+    - name: cert-manager-crds
   path: ./kubernetes/apps/networking/cert-manager/issuers
   prune: true
   sourceRef:
