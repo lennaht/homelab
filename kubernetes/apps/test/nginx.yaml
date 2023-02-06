@@ -39,7 +39,7 @@ metadata:
 spec:
   tls:
   - hosts:
-    - nginx.lennartbeneke.de
+    - '*.lennartbeneke.de'
     secretName: lan-lennartbeneke-de-tls-staging
   rules:
   - host: nginx.lennartbeneke.de
