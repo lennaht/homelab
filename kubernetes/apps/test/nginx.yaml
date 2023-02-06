@@ -39,9 +39,9 @@ metadata:
 spec:
   tls:
   - hosts:
-    - nginx.lan.lennartbeneke.de
+    - nginx.lennartbeneke.de
   rules:
-  - host: nginx.lan.lennartbeneke.de
+  - host: nginx.lennartbeneke.de
     http:
       paths:
       - path: /
