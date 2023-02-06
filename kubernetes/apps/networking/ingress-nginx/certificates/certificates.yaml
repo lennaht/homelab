@@ -10,5 +10,5 @@ spec:
     name: letsencrypt-staging
     kind: ClusterIssuer
   dnsNames:
-    - lan.lennartbeneke.de
-    - '*.lan.lennartbeneke.de'
+    - lennartbeneke.de
+    - '*.lennartbeneke.de'
