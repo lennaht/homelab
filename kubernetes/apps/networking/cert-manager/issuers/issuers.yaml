@@ -34,7 +34,7 @@ spec:
       - dns01:
           cloudflare:
             email: rulezdzn@gmail.com
-            apiKeySecretRef:
+            apiTokenSecretRef:
               name: cloudflare-secret
               key: api-key
         selector:
