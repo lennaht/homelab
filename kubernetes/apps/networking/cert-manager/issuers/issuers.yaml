@@ -8,7 +8,7 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: rulezdzn@gmail.com
     privateKeySecretRef:
-      name: letsencrypt-production
+      name: letsencrypt-production-secret
     solvers:
       - dns01:
           cloudflare:
@@ -29,7 +29,7 @@ spec:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     email: rulezdzn@gmail.com
     privateKeySecretRef:
-      name: letsencrypt-staging
+      name: letsencrypt-staging-secret
     solvers:
       - dns01:
           cloudflare:

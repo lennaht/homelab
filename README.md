@@ -1,7 +1,11 @@
 ## How to bootstrap flux
 
 ### Prepare the environment and create secrets
-Run the `prepare-env.sh` script, this will create a new age key `age.agekey` in this directory and set some environment variables. It will also create a new ssh-key `deploy-key`. The public key `deploy-key.pub` has to be set as deploy key with push privileges in the GitHub repository.
+Run the `prepare-env.sh` script in your current terminal using
+```bash
+source prepare-env.sh
+```
+This will create a new age key `age.agekey` in this directory and set some environment variables. It will also create a new ssh-key `deploy-key`. The public key `deploy-key.pub` has to be set as deploy key with push privileges in the GitHub repository.
 
 The environment-variable `GIT_REPO_URL` is set to this repository by default and can afterwards be changed with
 ```bash
