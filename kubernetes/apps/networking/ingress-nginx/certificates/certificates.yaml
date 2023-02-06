@@ -2,14 +2,13 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: devbu-io
+  name: lan-lennartbeneke-de
   namespace: networking
 spec:
   secretName: lan-lennartbeneke-de-tls-staging
   issuerRef:
     name: letsencrypt-staging
     kind: ClusterIssuer
-  commonName: devbu.io
   dnsNames:
     - lan.lennartbeneke.de
     - '*.lan.lennartbeneke.de'
