@@ -2,24 +2,10 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: lan-lennartbeneke-de-staging
+  name: lennartbeneke-de
   namespace: networking
 spec:
-  secretName: lan-lennartbeneke-de-tls-staging
-  issuerRef:
-    name: letsencrypt-staging
-    kind: ClusterIssuer
-  dnsNames:
-    - lennartbeneke.de
-    - '*.lennartbeneke.de'
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: lan-lennartbeneke-de
-  namespace: networking
-spec:
-  secretName: lan-lennartbeneke-de-tls-production
+  secretName: lennartbeneke-de-tls-production
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer

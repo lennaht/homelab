@@ -42,7 +42,7 @@ spec:
   tls:
   - hosts:
     - '*.lennartbeneke.de'
-    secretName: lan-lennartbeneke-de-tls-production
+    secretName: lennartbeneke-de-tls-production
   rules:
   - host: lan.lennartbeneke.de
     http:
