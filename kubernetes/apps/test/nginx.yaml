@@ -44,7 +44,7 @@ spec:
     - '*.lennartbeneke.de'
     secretName: lan-lennartbeneke-de-tls-production
   rules:
-  - host: nginx.lennartbeneke.de
+  - host: lan.lennartbeneke.de
     http:
       paths:
       - path: /
