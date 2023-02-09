@@ -34,4 +34,4 @@ spec:
         default: true
       extraArgs:
         default-ssl-certificate: |-
-          networking/lan-lennartbeneke-de-tls-staging
+          networking/lennartbeneke-de-tls-production
