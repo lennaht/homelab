@@ -7,11 +7,13 @@ resource "proxmox_vm_qemu" "vm" {
 
   clone    = "ubuntu-cloud-template"
   os_type  = "cloud-init"
-  memory   = 2048
+  memory   = 3072
   cores    = 2
   onboot   = false
   oncreate = false
   agent    = 1
+  scsihw   = "virtio-scsi-pci"
+  qemu_os  = "other"
 
   network {
     bridge = "vmbr0"
@@ -30,5 +32,5 @@ resource "proxmox_vm_qemu" "vm" {
   sshkeys    = tls_private_key.id_rsa.public_key_openssh
   ipconfig0  = "ip=${var.ci_ipadresses[count.index]},gw=${var.cigateway}"
 
-  tags = "terraform,k8s"
+  tags = "k8s;terraform"
 }
