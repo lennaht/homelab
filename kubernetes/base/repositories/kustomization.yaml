@@ -4,3 +4,4 @@ resources:
   - metallb.yaml
   - ingress-nginx.yaml
   - longhorn.yaml
+  - uptime-kuma.yaml
