@@ -26,18 +26,18 @@ spec:
       defaultClass: true
       defaultClassReplicaCount: 1
       reclaimPolicy: Delete
-  longhornUI:
-    replicas: 1
-  longhornConversionWebhook:
-    replicas: 1
-  longhornAdmissionWebhook:
-    replicas: 1
-  longhornRecoveryBackend:
-    replicas: 1
-  ingress:
-    enabled: true
-    ingressClassName: nginx
-    host: longhorn.lennartbeneke.de
-    tls: true
-    tls-secret: lennartbeneke-de-tls-production
-    path: /
+    longhornUI:
+      replicas: 1
+    longhornConversionWebhook:
+      replicas: 1
+    longhornAdmissionWebhook:
+      replicas: 1
+    longhornRecoveryBackend:
+      replicas: 1
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      host: longhorn.lennartbeneke.de
+      tls: true
+      tls-secret: lennartbeneke-de-tls-production
+      path: /
