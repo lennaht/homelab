@@ -2,3 +2,5 @@ user_timezone: Europe/Berlin
 
 extra_packages:
   - htop
+  - open-iscsi
+  - nfs-common
