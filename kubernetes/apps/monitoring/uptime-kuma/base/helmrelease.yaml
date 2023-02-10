@@ -35,3 +35,4 @@ spec:
             - '*.lennartbeneke.de'
     volume:
       size: 4Gi
+      storageClassName: longhorn
