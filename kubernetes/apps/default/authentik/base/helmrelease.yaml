@@ -47,9 +47,9 @@ spec:
   valuesFrom:
     - kind: Secret
       name: authentik-postgres
-      valuePath: user
+      valuesKey: user
       targetPath: authentik.postgres.user
     - kind: Secret
       name: authentik-postgres
-      valuePath: password
+      valuesKey: password
       targetPath: authentik.postgres.password
