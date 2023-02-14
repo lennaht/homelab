@@ -38,8 +38,9 @@ spec:
       ingressClassName: nginx
       hosts:
         - host: auth.lennartbeneke.de
-          paths: /
-          pathType: Prefix
+          paths:
+            - path: /
+              pathType: Prefix
       tls:
         - secretName: lennartbeneke-de-tls-production
           hosts:
