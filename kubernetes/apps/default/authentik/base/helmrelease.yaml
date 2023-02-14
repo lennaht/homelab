@@ -27,6 +27,10 @@ spec:
     keepHistory: false
   values:
     authentik:
+      postgres:
+        host: cnpg-cluster-default-rw.default.svc.cluster.local
+        name: authentik
+
       redis:
         host: redis-master.default.svc.cluster.local
     ingress:
@@ -43,4 +47,9 @@ spec:
   valuesFrom:
     - kind: Secret
       name: authentik-postgres
-      targetPath: authentik.postgres
+      valuePath: user
+      targetPath: authentik.postgres.user
+    - kind: Secret
+      name: authentik-postgres
+      valuePath: password
+      targetPath: authentik.postgres.password

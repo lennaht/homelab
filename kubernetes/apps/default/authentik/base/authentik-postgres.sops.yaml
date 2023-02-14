@@ -4,8 +4,6 @@ metadata:
     name: authentik-postgres
     namespace: default
 stringData:
-    host: ENC[AES256_GCM,data:R4NnpkFzHTXPnmkAQzPlrfzRhWQb6r440bzj6LsvY9gKwxLIxZCIkAld6dpVBjB4/w==,iv:pmcjo4Wrz7gFdnphNXcvqX1t15IADwXOozZXByQIkIM=,tag:AgAIxi9t1l6Xfh/ngioeFg==,type:str]
-    name: ENC[AES256_GCM,data:870J7xVN4WlR,iv:LuwyqGbMOIlStxUhbd21sLiMawa3WN9reEcNxtNyhdE=,tag:RiYWtYReo6Ty3U9PgNN5aw==,type:str]
     password: ENC[AES256_GCM,data:+Yd65ooz7afEorUVt+K82GPR2bE/o5lztCdQow==,iv:tUfc75yVSj+8EhDbvS0s9BfJfOorDIS0RIkbq/OGKkM=,tag:nkxlduC3kr8Y1EMN2me8vw==,type:str]
     user: ENC[AES256_GCM,data:DhPI25leyg==,iv:JuIBAcKmktlEfjc/iR+ZJwjNh4K58srlH20bu7XxVV4=,tag:+CRZwsbnVKd6iMautqc5mQ==,type:str]
 sops:
@@ -23,8 +21,8 @@ sops:
             ai9LOEFvWGtTaE9DNEgyT0lBbXZvQVEKljATf+UIPXTXCaFYlLE7OqbAt3llYL8J
             FGB5vS1H/S14UFS5lZfj6uYmzq7JEdPEueMG3Dzft6l5zhYu+bsDZg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-02-14T15:22:10Z"
-    mac: ENC[AES256_GCM,data:AJjxC0NRccty0iW4qOhgSnBjrI94NRH6DxNCwip28U2V+2c4NaJCUwIOAJzDmvocpgUkeLoqvYJpNHrtx/5JDi74cojfCQ05CyiVOt/kjhVTPCSyJsEdmA4uQ3P7urjOCsNRsbc5Wbx4VTwICNAl/u0kuEsmi+SEmyp/p32Qb8A=,iv:AhDlqI8/6+lKaVFvg+3geBAouVFxyHWomZnQvN1W8O0=,tag:a32rno8DwROq5Mte1pvyJw==,type:str]
+    lastmodified: "2023-02-14T15:32:19Z"
+    mac: ENC[AES256_GCM,data:gp1eEM7c5S6uOw6yELw0UtMI6sWCrm8zGdqXAnRdEiHCxyxQYlxDBcmsKM3I9rdotcpIRC51KNHKYm3jo70O6SZYPKLMqqF13I+8A9Fhx8kSR8V1kzyG1t1OhZZeCkLVNP4AEQXVXbaBq3zMi1K6Z2+xgA7zFuzbAj06Sz+KOn4=,iv:IDD/JHsL3vkmcKCj1JFGjsQ69PIj5pdDercEFPvpCmI=,tag:V7uYKLtUO4R79tTxd0aByg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)
     version: 3.7.3
