@@ -1,0 +1,46 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: authentik
+  namespace: default
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: authentik
+      version: 2023.1.2
+      interval: 15m
+      sourceRef:
+        kind: HelmRepository
+        name: authentik-repo
+        namespace: flux-system
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    authentik:
+      redis:
+        host: redis-master.default.svc.cluster.local
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      hosts:
+        - host: auth.lennartbeneke.de
+          paths: /
+          pathType: Prefix
+      tls:
+        - secretName: lennartbeneke-de-tls-production
+          hosts:
+            - '*.lennartbeneke.de'
+  valuesFrom:
+    - kind: Secret
+      name: authentik-postgres
+      targetPath: authentik.postgres
