@@ -1,0 +1,21 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: cnpg-authentik
+  namespace: default
+spec:
+  instances: 1
+  primaryUpdateStrategy: unsupervised
+  storage:
+    size: 2Gi
+    storageClass: local-path
+  superuserSecret:
+    name: cloudnative-pg-secret
+  bootstrap:
+    initdb:
+      database: authentik
+      owner: authentik
+      secret:
+        name: authentik-secret
+  monitoring:
+    enablePodMonitor: false
