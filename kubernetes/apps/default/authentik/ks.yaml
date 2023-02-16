@@ -2,33 +2,12 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: authentik-cluster
-  namespace: flux-system
-spec:
-  path: ./kubernetes/apps/default/authentik/cluster
-  dependsOn:
-    - name: cloudnative-pg-base
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  interval: 30m
-  retryInterval: 1m
-  timeout: 3m
-  decryption:
-    provider: sops
-    secretRef:
-      name: sops-age
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
   name: authentik-base
   namespace: flux-system
 spec:
   path: ./kubernetes/apps/default/authentik/base
   dependsOn:
-    - name: authentik-cluster
+    - name: cloudnative-pg-cluster
   prune: true
   sourceRef:
     kind: GitRepository
