@@ -14,7 +14,10 @@ spec:
     name: cloudnative-pg-secret
   postgresql:
     parameters:
-      max_connections: '300'
+      max_connections: '300'   
+  bootstrap:
+    recovery:
+      source: &previous-cluster cluster-backup
   monitoring:
     enablePodMonitor: false
   backup:
@@ -32,3 +35,18 @@ spec:
         secretAccessKey:
           name: cloudnative-pg-secret
           key: aws-secret-access-key
+  externalClusters:
+    - name: *previous-cluster
+      barmanObjectStore:
+        wal:
+          compression: bzip2
+          maxParallel: 8
+        destinationPath: s3://cloudnative-pg/
+        endpointURL: https://s3.lennart.cloud
+        s3Credentials:
+          accessKeyId:
+            name: cloudnative-pg-secret
+            key: aws-access-key-id
+          secretAccessKey:
+            name: cloudnative-pg-secret
+            key: aws-secret-access-key
