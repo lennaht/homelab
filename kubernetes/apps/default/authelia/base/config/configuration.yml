@@ -24,10 +24,3 @@ access_control:
     - domain: ["uptime.lennartbeneke.de"]
       resources: ["^/status.*$"]
       policy: bypass
-
-identity_providers:
-  oidc:
-    cors:
-      endpoints: ["authorization", "token", "revocation", "introspection"]
-      allowed_origins_from_client_redirect_uris: true
-    clients:
