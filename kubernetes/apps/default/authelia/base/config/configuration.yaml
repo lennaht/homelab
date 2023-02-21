@@ -1,0 +1,21 @@
+---
+session:
+  redis:
+    host: redis-master.default.svc.cluster.local
+
+access_control:
+  default_policy: one_factor
+  networks:
+    - name: internal
+      networks: ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"]
+  rules:
+    - domain: ["uptime.lennartbeneke.de"]
+      resources: ["^/status.*$"]
+      policy: bypass
+
+identity_providers:
+  oidc:
+    cors:
+      endpoints: ["authorization", "token", "revocation", "introspection"]
+      allowed_origins_from_client_redirect_uris: true
+    clients:
