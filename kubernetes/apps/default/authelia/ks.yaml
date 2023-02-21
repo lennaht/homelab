@@ -8,7 +8,7 @@ spec:
   dependsOn:
     - name: cloudnative-pg-cluster
     - name: redis-base
-  path: ./kubernetes/apps/default/authelia/app
+  path: ./kubernetes/apps/default/authelia/base
   prune: true
   sourceRef:
     kind: GitRepository
