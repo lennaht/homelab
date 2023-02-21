@@ -1,7 +1,19 @@
 ---
+authentication_backend:
+  file:
+    path: /config/users.yaml
+    watch: false
+    search:
+      email: true
+      case_insensitive: true
+    password:
+      bcrypt:
+        variant: standard
+        cost: 12
 session:
   redis:
     host: redis-master.default.svc.cluster.local
+    port: 6379
 
 access_control:
   default_policy: one_factor
