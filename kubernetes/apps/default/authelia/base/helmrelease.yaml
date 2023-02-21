@@ -102,6 +102,13 @@ spec:
         subPath: configuration.yml
         mountPath: /config/configuration.yml
         readOnly: false
+      users:
+        enabled: true
+        type: secret
+        name: authelia-secret
+        subPath: AUTHELIA_USERS_YAML
+        mountPath: /config/users.yaml
+        readOnly: false
     topologySpreadConstraints:
       - maxSkew: 1
         topologyKey: kubernetes.io/hostname
