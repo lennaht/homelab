@@ -6,6 +6,8 @@ metadata:
   namespace: flux-system
 spec:
   path: ./kubernetes/apps/monitoring/uptime-kuma/base
+  dependsOn:
+    - name: networking-ingress-nginx
   prune: true
   sourceRef:
     kind: GitRepository
