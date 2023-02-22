@@ -28,6 +28,7 @@ spec:
         maxParallel: 8
       destinationPath: s3://cloudnative-pg/
       endpointURL: https://s3.lennart.cloud
+      serverName: postgres-backup
       s3Credentials:
         accessKeyId:
           name: cloudnative-pg-secret
