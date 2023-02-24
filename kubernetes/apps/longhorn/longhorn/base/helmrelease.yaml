@@ -42,6 +42,6 @@ spec:
         nginx.ingress.kubernetes.io/auth-snippet: |
           proxy_set_header X-Forwarded-Method $request_method;
         hajimari.io/enable: true
-        hajimari.io/icon: game-icons:bull-horns
+        hajimari.io/icon: 'game-icons:bull-horns'
         hajimari.io/appName: Longhorn
         hajimari.io/group: Admin

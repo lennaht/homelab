@@ -47,7 +47,7 @@ spec:
           - monitoring
           - networking
       customApps:
-        - group: Networking
+        - group: networking
           customApps:
             - name: FritzBox
               url: http://10.0.0.1

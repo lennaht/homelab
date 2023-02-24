@@ -57,7 +57,7 @@ spec:
             proxy_cache_bypass $http_upgrade;
           }
         hajimari.io/enable: true
-        hajimari.io/icon: simple-icons:uptimekuma
+        hajimari.io/icon: 'simple-icons:uptimekuma'
         hajimari.io/appName: Uptime-Kuma
         hajimari.io/info: |
           Monitors uptime of services.
