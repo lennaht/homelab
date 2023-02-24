@@ -56,6 +56,11 @@ spec:
             proxy_set_header   Upgrade $http_upgrade;
             proxy_cache_bypass $http_upgrade;
           }
+        hajimari.io/enable: true
+        hajimari.io/icon: mdi:chart-box-outline
+        hajimari.io/appName: Uptime-Kuma
+        hajimari.io/info: |
+          Monitors uptime of services.
     volume:
       size: 4Gi
       storageClassName: longhorn

@@ -1,0 +1,74 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hajimari
+  namespace: default
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: hajimari
+      version: 2.0.2
+      sourceRef:
+        kind: HelmRepository
+        name: hajimari-repo
+        namespace: flux-system
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    env:
+      TZ: Europe/Berlin
+    hajimari:
+      title: Apps
+      darkTheme: chalk
+      alwaysTargetBlank: true
+      showGreeting: false
+      showAppGroups: true
+      showAppStatus: true
+      showBookmarkGroups: false
+      showGlobalBookmarks: false
+      showAppUrls: false
+      defaultEnable: true
+      namespaceSelector:
+        matchNames:
+          - default
+          - longhorn-system
+          - monitoring
+      customApps:
+        - group: Networking
+          customApps:
+            - name: FritzBox
+              url: http://10.0.0.1
+              icon: 'mdi:router-wireless'
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: nginx
+        annotations:
+          hajimari.io/enable: "false"
+        hosts:
+          - host: &host apps.lennartbeneke.de
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - *host
+    persistence:
+      data:
+        enabled: true
+        type: emptyDir
+    resources:
+      limits:
+        cpu: 100m
+        memory: 128M

@@ -4,4 +4,5 @@ resources:
   - namespace.yaml
   - ./authelia/ks.yaml
   - ./cloudnative-pg/ks.yaml
+  - ./hajimari/ks.yaml
   - ./redis/ks.yaml
