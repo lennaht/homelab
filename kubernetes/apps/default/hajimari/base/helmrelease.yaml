@@ -31,6 +31,7 @@ spec:
     hajimari:
       title: Apps
       darkTheme: chalk
+      lightTheme: chalk
       alwaysTargetBlank: true
       showGreeting: false
       showAppGroups: true
@@ -44,12 +45,13 @@ spec:
           - default
           - longhorn-system
           - monitoring
+          - networking
       customApps:
         - group: Networking
           customApps:
             - name: FritzBox
               url: http://10.0.0.1
-              icon: 'mdi:router-wireless'
+              icon: 'arcticons:fritz-app-wlan'
     ingress:
       main:
         enabled: true

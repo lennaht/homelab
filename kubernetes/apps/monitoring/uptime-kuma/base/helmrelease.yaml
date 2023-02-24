@@ -28,7 +28,7 @@ spec:
         - host: &host uptime.lennartbeneke.de
           paths:
             - path: /
-              pathType: ImplementationSpecific
+              pathType: Prefix
       tls:
         - secretName: lennartbeneke-de-tls-production
           hosts:
