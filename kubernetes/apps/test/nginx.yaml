@@ -38,6 +38,7 @@ metadata:
   namespace: default
   annotations:
     kubernetes.io/ingress.class: "nginx"
+    hajimari.io/enable: false
 spec:
   tls:
   - hosts:

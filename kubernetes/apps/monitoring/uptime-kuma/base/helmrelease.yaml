@@ -25,14 +25,14 @@ spec:
     ingress:
       enabled: true
       hosts:
-        - host: uptime.lennartbeneke.de
+        - host: &host uptime.lennartbeneke.de
           paths:
             - path: /
               pathType: ImplementationSpecific
       tls:
         - secretName: lennartbeneke-de-tls-production
           hosts:
-            - '*.lennartbeneke.de'
+            - *host
       annotations:
         nginx.ingress.kubernetes.io/auth-method: GET
         nginx.ingress.kubernetes.io/auth-url: http://authelia.default.svc.cluster.local/api/verify
@@ -57,7 +57,7 @@ spec:
             proxy_cache_bypass $http_upgrade;
           }
         hajimari.io/enable: true
-        hajimari.io/icon: mdi:chart-box-outline
+        hajimari.io/icon: simple-icons:uptimekuma
         hajimari.io/appName: Uptime-Kuma
         hajimari.io/info: |
           Monitors uptime of services.
