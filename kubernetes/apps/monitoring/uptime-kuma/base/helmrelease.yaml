@@ -56,7 +56,7 @@ spec:
             proxy_set_header   Upgrade $http_upgrade;
             proxy_cache_bypass $http_upgrade;
           }
-        hajimari.io/enable: true
+        hajimari.io/enable: 'true'
         hajimari.io/icon: 'simple-icons:uptimekuma'
         hajimari.io/appName: Uptime-Kuma
         hajimari.io/info: |
