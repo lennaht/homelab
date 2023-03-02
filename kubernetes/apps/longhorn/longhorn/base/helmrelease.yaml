@@ -27,6 +27,9 @@ spec:
       replicas: 1
     longhornRecoveryBackend:
       replicas: 1
+    defaultSettings:
+      backupTargetCredentialSecret: longhorn-backup-secret
+      backupTarget: s3://longhorn/
     ingress:
       enabled: true
       ingressClassName: nginx
