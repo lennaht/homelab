@@ -19,7 +19,7 @@
       "automerge": true,
       "automergeType": "branch",
       "matchUpdateTypes": ["digest"],
-      "matchPackagePattern": ["ghcr.io/authelia"]
+      "matchPackagePatterns": ["ghcr.io/authelia"]
     }
   ]
 }
