@@ -11,5 +11,15 @@
   },
   "kubernetes": {
     "fileMatch": ["kubernetes/.+\\.ya?ml$"]
-  }
+  },
+  "packageRules": [
+    {
+      "description": "Auto merge authelia container digests",
+      "matchDatasources": ["docker"],
+      "automerge": true,
+      "automergeType": "branch",
+      "matchUpdateTypes": ["digest"],
+      "matchPackagePattern": ["ghcr.io/authelia"]
+    }
+  ]
 }
