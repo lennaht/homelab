@@ -12,6 +12,7 @@
   "kubernetes": {
     "fileMatch": ["kubernetes/.+\\.ya?ml$"]
   },
+  "platformAutomerge": true,
   "packageRules": [
     {
       "description": "Auto merge authelia container digests",
