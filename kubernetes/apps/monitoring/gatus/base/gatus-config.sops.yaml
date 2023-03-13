@@ -4,7 +4,7 @@ metadata:
     name: gatus-config
     namespace: monitoring
 stringData:
-    config.yml: ENC[AES256_GCM,data:ZOOL5dtchtxRgwQWCjUHt31i9cSXnge4GtKBjnLSRnAfgn6ls25xb3C4e3ITY1HNdghlfPL39V24niPTgYvWAsQ+DxHnIKVH73zpUes3dJRNhIKBR0Jxcb6INbZl9MYCwTsLIB03FAEV6Bt40zxGaY+OA2qqDx0eW51Tt5AajmSnfgxOIAaHTc3nHlc4LNe/HexfC9BMbdsa3/KuS/vwy5uEh1XA7ohemhJqZ6B3fOIeIBjC3lE36AMx4lo6OmGY1Ck/7meqxcsvIOzcR+5+yPCIpwYh5MxCPRrflOcLu11JU5e++rAWm7SP/OtYG0CX1ZpevzjYIkeH64p1avIO6xDnDb72s5lqD6VnoqyEbTfTNc9m4MTpKpqtA7IoST1fiIowcA==,iv:Y+8p3LVbf4gw77CmzC0MGK7TURGWnFVUniOklCJ/fTs=,tag:d1R2CYmyQzDGMEJ3q5ZxIg==,type:str]
+    config.yaml: ENC[AES256_GCM,data:FhaKk4i9UKFLumWMchXQujP5A4Vow7lVRsAQK7VPsz4ZlicoRf2rSMthBj+CEe6xmUR9sOXCl0JmTboQVNkmi4sFAPub3lbk+g1hL7bmu6mZDGLqQUSty1DrIBsqm8iYFk0U1Kj8d2kqGpYVnF8yJboZxC6/EN3pcAzLJ7y8IusmJdpUYXb3w3ubtTKTFpNLh02Pz8whLMB3MO4lZhRU2UMB04jrcZBcy/+P3ZqKj87ncC2wBnOJ9MH95lNsdVXZQRNopa1zVyGsncd82QedWVI2g1UhQdQ4dqMgb7xdgWK7cdOpfElO3XEHvBDqL4G/uy9qTP0yih+izAe6Go8SD3MESyFzxEx55hpCh6U5vC2O928AMI/W61LTWc+u1XuJFrheww==,iv:w+kPT2py66n6OqoIPU41SCZYMbxGq9u9ArtrI/qD5bk=,tag:UrE/KTi3s1qjfNkyHLX3/w==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -20,8 +20,8 @@ sops:
             d0pzdmUyREl2UjdHK1BtT01pNnFWSDgK234MTkqoTC1gNhzjvQ05lUnOa+GyUy5L
             IiCs9NoYcQW8zqnJJhaSWv8Nfh3JcxCAaISIiHTUEgYe+IrZLMjPSw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-03-13T09:36:53Z"
-    mac: ENC[AES256_GCM,data:rB2aZWhBwXn2Ao9l3jylCIzf/Yx8GQoJTU396QvPQAqIizH1cdjuxcfqHdaiQqrqI04o5DYyRI6aMz68Xlhs/Oi8WuH2q7rQJMpfLwOmA2vvw6u0jh3/6yXhJygtSNYS8pHIKxj53AqQ2RRrvAZQU4LmPbXU4WNfNqAodWnt2gs=,iv:0vAFTxHL+K5H59yfjEVuX/ln+7hMIFk3dbs0A3L1vcA=,tag:OWy3osVv6aMicJI427qC/g==,type:str]
+    lastmodified: "2023-03-13T11:54:36Z"
+    mac: ENC[AES256_GCM,data:Ed1bwW/nqqMgAwrhxrJrqSabEL33vPGJMLAKOaDLDwh6AC3ZS02iGdFrzB8+zrqSntWqBPWoq5rbIG3z0eIJdB7T47ZGxhIGPr5KLnWIHQG4uh7cVKkvezmM3k6BpJPMiDUVsEsDJftiBJd+PRZOccE30P+fhEKFqsS5rJTvvlw=,iv:R4SeFagZilmFbhKL7VAV4ctSMa7Qp/BmygFerWIbh7Y=,tag:df1CnRqvkTaWRLstR3Xhmg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)
     version: 3.7.3

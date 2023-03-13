@@ -91,8 +91,8 @@ spec:
         enabled: true
         type: secret
         name: gatus-config
-        subPath: config.yml
-        mountPath: /config/config.yml
+        subPath: config.yaml
+        mountPath: /config/config.yaml
         readOnly: false
     topologySpreadConstraints:
       - maxSkew: 1
