@@ -44,10 +44,7 @@ spec:
       main:
         ports:
           http:
-            port: &port 80
-          metrics:
-            enabled: true
-            port: 8080
+            port: &port 8080
     probes:
       liveness: &probes
         enabled: true
