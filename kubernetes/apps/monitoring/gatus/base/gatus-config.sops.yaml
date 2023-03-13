@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: gatus-config
+    namespace: monitoring
+stringData:
+    config.yml: ENC[AES256_GCM,data:ZOOL5dtchtxRgwQWCjUHt31i9cSXnge4GtKBjnLSRnAfgn6ls25xb3C4e3ITY1HNdghlfPL39V24niPTgYvWAsQ+DxHnIKVH73zpUes3dJRNhIKBR0Jxcb6INbZl9MYCwTsLIB03FAEV6Bt40zxGaY+OA2qqDx0eW51Tt5AajmSnfgxOIAaHTc3nHlc4LNe/HexfC9BMbdsa3/KuS/vwy5uEh1XA7ohemhJqZ6B3fOIeIBjC3lE36AMx4lo6OmGY1Ck/7meqxcsvIOzcR+5+yPCIpwYh5MxCPRrflOcLu11JU5e++rAWm7SP/OtYG0CX1ZpevzjYIkeH64p1avIO6xDnDb72s5lqD6VnoqyEbTfTNc9m4MTpKpqtA7IoST1fiIowcA==,iv:Y+8p3LVbf4gw77CmzC0MGK7TURGWnFVUniOklCJ/fTs=,tag:d1R2CYmyQzDGMEJ3q5ZxIg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1e2sfwa84lw80w9m3ap8naamgudu7wyrm5xn4l5ll3te84l2xs3fqe2zmue
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBqQ1R4UjNPSXZaYWVzQVAv
+            dmpvUk1JT2w1T0VVUzJBZ2E3eTQ2SWlzZkY0CkpCTjVMUy9zdng0QjdWUW9SRDMv
+            RDBTU0s3elRsRG1mSzlHMm50S0RhQkkKLS0tIEZueElOMmVua0VoVTJneUhUVDl4
+            d0pzdmUyREl2UjdHK1BtT01pNnFWSDgK234MTkqoTC1gNhzjvQ05lUnOa+GyUy5L
+            IiCs9NoYcQW8zqnJJhaSWv8Nfh3JcxCAaISIiHTUEgYe+IrZLMjPSw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-03-13T09:36:53Z"
+    mac: ENC[AES256_GCM,data:rB2aZWhBwXn2Ao9l3jylCIzf/Yx8GQoJTU396QvPQAqIizH1cdjuxcfqHdaiQqrqI04o5DYyRI6aMz68Xlhs/Oi8WuH2q7rQJMpfLwOmA2vvw6u0jh3/6yXhJygtSNYS8pHIKxj53AqQ2RRrvAZQU4LmPbXU4WNfNqAodWnt2gs=,iv:0vAFTxHL+K5H59yfjEVuX/ln+7hMIFk3dbs0A3L1vcA=,tag:OWy3osVv6aMicJI427qC/g==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)
+    version: 3.7.3
