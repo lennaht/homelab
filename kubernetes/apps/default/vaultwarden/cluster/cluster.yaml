@@ -1,0 +1,25 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: vaultwarden-pg
+  namespace: default
+spec:
+  instances: 1
+  imageName: ghcr.io/cloudnative-pg/postgresql:15.2
+  primaryUpdateStrategy: unsupervised
+  storage:
+    size: 4Gi
+    storageClass: local-path
+  superuserSecret:
+    name: vaultwarden-pg-superuser-secret
+  postgresql:
+    parameters:
+      max_connections: '300'
+  monitoring:
+    enablePodMonitor: false
+  bootstrap:
+    initdb:
+      database: vaultwarden
+      owner: vaultwarden
+      secret:
+        name: vaultwarden-pg-secret

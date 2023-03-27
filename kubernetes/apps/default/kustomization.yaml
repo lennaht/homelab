@@ -6,3 +6,4 @@ resources:
   - ./cloudnative-pg/ks.yaml
   - ./hajimari/ks.yaml
   - ./redis/ks.yaml
+  - ./vaultwarden/ks.yaml
