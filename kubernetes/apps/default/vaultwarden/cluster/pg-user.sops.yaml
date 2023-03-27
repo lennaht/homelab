@@ -3,6 +3,7 @@ type: kubernetes.io/basic-auth
 kind: Secret
 metadata:
     name: vaultwarden-pg-secret
+    namespace: default
 stringData:
     username: ENC[AES256_GCM,data:lNR6pXZkj6eZgFY=,iv:PoHz/vjFXmwJF5KXA0Kprgxq7TsJ1y3XN5kstZ60ZpA=,tag:Hqb78PBnzN+MHB7pmG4jZg==,type:str]
     password: ENC[AES256_GCM,data:aEsD0sJf90nRjhBCzkKXJcsk7S51Y6JQZNIazQ==,iv:oB2oQSWkoUrTNJvXkIXH9Flti/EpSrO6cFI2AUQ14jE=,tag:2YofIsYogoUsliGHX0x+qQ==,type:str]
@@ -21,8 +22,8 @@ sops:
             VWlra1lRYTlIMG15WmxXR3Y4L3JsbzAKPAJRyo4ppKfZMurT46Ho4xd+Q/0zLktC
             5bbR3UhIDB2yVg/l1OEVBoNoP9Wi5Tbm9Y5R7p5RgegxB1GwXqvLYQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-03-27T20:20:50Z"
-    mac: ENC[AES256_GCM,data:GBkbXKakh243+1WGrSeI783nIzT4bGmEvAgMTqQ7pJh+Tn19Sx/U6DsiNgHf/3wOtuxOdduVIWZ+B4HlZMsr6qsLVol/mNTy2KUnb12vWQpzRp6y+K0qER1HS6TR/ztZTIIGEas4uw/utS+/+brg94yrWfUkZnMQX5yazS6YU94=,iv:T5vXFraRZ0581pwdKLpCaA2ZUO4hRoVlf5nUsMTxicM=,tag:khe/Gzq+NJEmP+IdSPrwUg==,type:str]
+    lastmodified: "2023-03-27T20:22:38Z"
+    mac: ENC[AES256_GCM,data:IQ44grpk4D2KiP1oCIIP1Udaxf6MHV528qrsvRVC9Ys7xi6S7slsKrd5KsBFDN1QD41tduSV11XEo9Y01srcP37F6e53UZjmjt9qme9ifbyalr2Crt+dRokBrN1UNzrvQuQLO0e3+d27Oy/gOy41MFFANDG9wbiNsVU206zmF5I=,iv:v3qBgnCw1rAlDrCZ03knphhF3s0yYl4xcrr2100Zfs8=,tag:GxoUWTSsd+aHE14n5BZv1A==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)
     version: 3.7.3
