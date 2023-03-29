@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: vaultwarden-scheduled-backup
+  namespace: default
+spec:
+  schedule: '0 4 * * *'
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: postgres-backup-s3
+            image: eeshugerman/postgres-backup-s3:15@sha256:761407b7a6710d3418c7da67ca8e667908e6a5b19a7b2c14eb58cbe97ad07d50
+            imagePullPolicy: IfNotPresent
+            envFrom:
+              - secretRef:
+                  name: vaultwarden-secret
+          restartPolicy: OnFailure
