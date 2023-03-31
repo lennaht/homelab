@@ -38,7 +38,7 @@ spec:
       strategy: RollingUpdate
     image:
       repository: docker.io/twinproduction/gatus
-      tag: v5.3.1
+      tag: v5.3.2
     enableServiceLinks: false
     service:
       main:
