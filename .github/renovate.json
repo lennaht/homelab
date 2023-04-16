@@ -11,5 +11,15 @@
   },
   "kubernetes": {
     "fileMatch": ["kubernetes/.+\\.ya?ml$"]
-  }
+  },
+  "packageRules": [
+    {
+      "description": "Auto merge container digests",
+      "matchDatasources": ["docker"],
+      "automerge": true,
+      "ignoreTests": true,
+      "automergeType": "branch",
+      "matchUpdateTypes": ["digest"]
+    }
+  ]
 }
