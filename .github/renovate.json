@@ -19,6 +19,7 @@
       "automerge": true,
       "ignoreTests": true,
       "automergeType": "branch",
+      "automergeSchedule": ["every weekend"],
       "matchUpdateTypes": ["digest"]
     }
   ]
