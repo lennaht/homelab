@@ -2,10 +2,10 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: redis-base
+  name: home-assistant-base
   namespace: flux-system
 spec:
-  path: ./kubernetes/apps/default/redis/base
+  path: ./kubernetes/apps/default/home-assistant/base
   dependsOn:
     - name: cloudnative-pg-cluster
   prune: true
