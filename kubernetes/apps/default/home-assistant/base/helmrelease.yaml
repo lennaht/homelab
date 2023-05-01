@@ -36,8 +36,8 @@ spec:
     controller:
       type: statefulset
     image:
-      repository: ghcr.io/onedr0p/home-assistant
-      tag: 2023.4.6@sha256:b61019e4929fb904a2621df70785e4cfe923d61bad82167d23f67823df4d1246
+      repository: ghcr.io/home-assistant/home-assistant
+      tag: 2023.4.6
     env:
       TZ: Europe/Berlin
       POSTGRES_HOST: postgres-rw.default.svc.cluster.local
