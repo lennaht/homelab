@@ -11,7 +11,7 @@ spec:
         spec:
           containers:
           - name: postgres-backup-s3
-            image: eeshugerman/postgres-backup-s3:15@sha256:761407b7a6710d3418c7da67ca8e667908e6a5b19a7b2c14eb58cbe97ad07d50
+            image: eeshugerman/postgres-backup-s3:15@sha256:67b0cd3da05e1d5cb49e5fdc975b70b837d71bd07fd11f81bf18d4aa66c61824
             imagePullPolicy: IfNotPresent
             envFrom:
               - secretRef:
