@@ -22,7 +22,7 @@ resource "proxmox_vm_qemu" "vm" {
 
   disk {
     slot    = 0
-    storage = "nvme1"
+    storage = "local-lvm"
     type    = "scsi"
     size    = "40G"
   }

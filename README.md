@@ -24,7 +24,7 @@ Next we have to inject our secrets into the cluster. Run the script `create-secr
 ### Connect the Git Repository
 Now that flux is installed and the secrets are in place, we can create the GitRepository object and thus make flux sync our cluster to the repo.
 ```bash
-kubectl apply --server-side --kustomize kubernetes/flux
+kubectl apply --server-side --kustomize kubernetes/base/flux-system
 ```
 
 Now flux should automatically pull changes made to the repository and change the cluster accordingly.
