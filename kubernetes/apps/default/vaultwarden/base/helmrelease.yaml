@@ -31,7 +31,7 @@ spec:
       strategy: RollingUpdate
     image:
       repository: vaultwarden/server
-      tag: 1.29.1-alpine
+      tag: 1.29.2-alpine
     envFrom:
       - secretRef:
           name: vaultwarden-secret
