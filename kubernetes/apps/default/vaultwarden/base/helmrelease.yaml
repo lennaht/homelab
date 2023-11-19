@@ -31,7 +31,7 @@ spec:
       strategy: RollingUpdate
     image:
       repository: vaultwarden/server
-      tag: 1.29.2-alpine
+      tag: 1.30.0-alpine
     envFrom:
       - secretRef:
           name: vaultwarden-secret
@@ -41,9 +41,6 @@ spec:
         ports:
           http:
             port: &port 80
-          websocket:
-            enabled: true
-            port: 3012
     probes:
       liveness: &probes
         enabled: true
