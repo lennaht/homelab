@@ -38,7 +38,7 @@ spec:
       strategy: RollingUpdate
     image:
       repository: ghcr.io/authelia/authelia
-      tag: master@sha256:83f6708b52fe54eba50186e21c3bf6ee4cf991ffdae70872ca7b16d183715c9f
+      tag: master@sha256:0443273b8b16425f002bd44a1f729914384a6a1090a4fa8083510730b8a088c4
     args: ["--config", "/config/configuration.yml", "--config.experimental.filters", "expand-env"]
     envFrom:
       - secretRef:
