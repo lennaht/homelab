@@ -28,10 +28,11 @@ spec:
         - name: TZ
           value: Europe/Berlin
       service:
-        externalIPs: ['10.0.0.240']
+        externalIPs: ["10.0.0.240"]
         externalTrafficPolicy: Local
       ingressClassResource:
         default: true
+      allowSnippetAnnotations: true
       extraArgs:
         default-ssl-certificate: |-
           networking/lennartbeneke-de-tls-production
