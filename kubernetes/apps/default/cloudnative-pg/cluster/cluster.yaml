@@ -14,12 +14,12 @@ spec:
     name: cloudnative-pg-secret
   postgresql:
     parameters:
-      max_connections: '300'
+      max_connections: "300"
   monitoring:
     enablePodMonitor: false
   bootstrap:
     recovery:
-      source: &previous-cluster postgres-v3
+      source: &previous-cluster postgres-v4
   backup:
     retentionPolicy: 30d
     barmanObjectStore:
@@ -28,7 +28,7 @@ spec:
         maxParallel: 8
       destinationPath: s3://cloudnative-pg/
       endpointURL: https://s3.lennart.cloud
-      serverName: postgres-v4
+      serverName: postgres-v5
       s3Credentials:
         accessKeyId:
           name: cloudnative-pg-secret
