@@ -28,7 +28,7 @@ spec:
   values:
     initContainers:
       init-db:
-        image: ghcr.io/onedr0p/postgres-initdb:14.8
+        image: ghcr.io/onedr0p/postgres-init:15.5
         imagePullPolicy: IfNotPresent
         envFrom:
           - secretRef:
@@ -39,7 +39,13 @@ spec:
     image:
       repository: ghcr.io/authelia/authelia
       tag: master@sha256:4e07236b0b0c21362acabc04ef50fe971b65c3d822de271450f681fae778606e
-    args: ["--config", "/config/configuration.yml", "--config.experimental.filters", "expand-env"]
+    args:
+      [
+        "--config",
+        "/config/configuration.yml",
+        "--config.experimental.filters",
+        "expand-env",
+      ]
     envFrom:
       - secretRef:
           name: authelia-secret
@@ -80,7 +86,7 @@ spec:
             add_header Pragma "no-cache";
             add_header X-Frame-Options "SAMEORIGIN";
             add_header X-XSS-Protection "1; mode=block";
-          hajimari.io/enable: 'true'
+          hajimari.io/enable: "true"
           hajimari.io/icon: mdi:shield-account
           hajimari.io/appName: Authelia
           hajimari.io/info: |
