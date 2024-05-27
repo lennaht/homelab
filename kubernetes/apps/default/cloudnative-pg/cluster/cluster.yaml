@@ -27,7 +27,7 @@ spec:
         compression: bzip2
         maxParallel: 8
       destinationPath: s3://cloudnative-pg/
-      endpointURL: https://s3.lennart.cloud
+      endpointURL: https://s3.hidrive.strato.com
       serverName: postgres-v5
       s3Credentials:
         accessKeyId:
@@ -36,6 +36,9 @@ spec:
         secretAccessKey:
           name: cloudnative-pg-secret
           key: aws-secret-access-key
+        region:
+          name: cloudnative-pg-secret
+          key: aws-region
   externalClusters:
     - name: *previous-cluster
       barmanObjectStore:
