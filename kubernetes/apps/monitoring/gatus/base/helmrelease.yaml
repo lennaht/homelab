@@ -28,7 +28,7 @@ spec:
   values:
     initContainers:
       init-db:
-        image: ghcr.io/onedr0p/postgres-initdb:14.8
+        image: ghcr.io/onedr0p/postgres-init:15.5
         imagePullPolicy: IfNotPresent
         envFrom:
           - secretRef:
@@ -68,8 +68,8 @@ spec:
         enabled: true
         ingressClassName: nginx
         annotations:
-          hajimari.io/enable: 'true'
-          hajimari.io/icon: 'material-symbols:timeline'
+          hajimari.io/enable: "true"
+          hajimari.io/icon: "material-symbols:timeline"
           hajimari.io/appName: Gatus
           hajimari.io/info: |
             Logs uptime of configured services.
