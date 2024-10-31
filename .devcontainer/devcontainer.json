@@ -1,0 +1,45 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "Ubuntu",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/base:noble",
+	"features": {
+		"ghcr.io/devcontainers-extra/features/ansible:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/sops:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/terraform-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/hspaans/devcontainer-features/ansible-lint:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+			"version": "latest",
+			"helm": "latest",
+			"minikube": "none"
+		},
+		"ghcr.io/goldsam/dev-container-features/flux2:1": {
+			"version": "latest"
+		}
+	},
+	"containerEnv": {
+		"KUBECONFIG": "/workspaces/homelab/ansible/k3s.yaml"
+	},
+	"postCreateCommand": "cat /workspaces/homelab/.devcontainer/.bashrc >> /home/vscode/.bashrc",
+	"customizations": {
+		"vscode": {
+			"extensions": ["hashicorp.terraform", "redhat.ansible", "signageos.signageos-vscode-sops"],
+			"settings": {
+				"ansible.python.interpreterPath": "/usr/bin/python3",
+				"redhat.telemetry.enabled": false,
+				"vs-kubernetes": {
+					"vs-kubernetes.crd-code-completion": "enabled"
+				}
+			}
+		}
+	}
+}
