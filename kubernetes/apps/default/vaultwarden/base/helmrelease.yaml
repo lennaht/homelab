@@ -32,6 +32,8 @@ spec:
     image:
       repository: vaultwarden/server
       tag: 1.32.6-alpine
+    env:
+      EXPERIMENTAL_CLIENT_FEATURE_FLAGS: "ssh-key-vault-item,ssh-agent"
     envFrom:
       - secretRef:
           name: vaultwarden-secret
