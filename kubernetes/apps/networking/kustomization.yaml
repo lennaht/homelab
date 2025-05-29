@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - ./metallb/ks.yaml
-  - ./cert-manager/
+  - ./cert-manager/ks.yaml
   - ./ingress-nginx/ks.yaml
