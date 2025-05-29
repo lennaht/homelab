@@ -38,7 +38,7 @@ spec:
       strategy: RollingUpdate
     image:
       repository: ghcr.io/authelia/authelia
-      tag: 4.39.3
+      tag: 4.39.4
     args:
       [
         "--config",
