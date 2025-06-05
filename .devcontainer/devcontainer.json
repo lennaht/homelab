@@ -14,7 +14,7 @@
 		"ghcr.io/devcontainers-extra/features/terraform-asdf:2": {
 			"version": "latest"
 		},
-		"ghcr.io/hspaans/devcontainer-features/ansible-lint:1": {
+		"ghcr.io/hspaans/devcontainer-features/ansible-lint:2": {
 			"version": "latest"
 		},
 		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
