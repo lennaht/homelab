@@ -1,3 +1,9 @@
+# GitOps enabled Homelab
+> [!WARNING]
+> This was my Kubernetes and GitOps enabled Homelab for some years and it worked well.
+> However I am now switching to a simpler Docker Compose based setup, as I cannot spend that much time on it anymore.
+> Hence, this repository is archived.
+
 ## How to bootstrap flux
 
 ### Prepare the environment and create secrets
